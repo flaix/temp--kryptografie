@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-const fs = require('fs');
 const stream = require('stream');
 
 const fromHex = new stream.Transform({

@@ -10,12 +10,10 @@ const toHex = new stream.Transform({
   }
 });
 
-const secret = process.argv[2];
-
-const encryptionStream =
-  crypto.createCipher('aes-256-cbc', secret);
+const hashStream =
+  crypto.createHash('sha256');
 
 process.stdin.
-  pipe(encryptionStream).
+  pipe(hashStream).
   pipe(toHex).
   pipe(process.stdout);
